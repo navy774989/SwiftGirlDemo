@@ -22,21 +22,44 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Qyx-04-GNA" customClass="TableViewCell" customModule="SwiftDemo2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="291" id="Qyx-04-GNA" customClass="TableViewCell" customModule="SwiftDemo2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="291"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qyx-04-GNA" id="8HE-L1-cG3">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="290.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rVp-s3-BER">
-                                                    <rect key="frame" x="92" y="0.0" width="173" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rVp-s3-BER">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="238"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="238" id="Wuf-Iz-w1K"/>
+                                                        <constraint firstAttribute="width" constant="375" id="YkK-vA-ktD"/>
+                                                    </constraints>
                                                 </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="watchMore" translatesAutoresizingMaskIntoConstraints="NO" id="SwU-iw-3OA">
+                                                    <rect key="frame" x="315" y="240" width="45" height="49"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ooC-Xq-Fix">
+                                                    <rect key="frame" x="15" y="251.5" width="53" height="26.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ooC-Xq-Fix" firstAttribute="leading" secondItem="8HE-L1-cG3" secondAttribute="leading" constant="15" id="1FJ-hh-Gsk"/>
+                                                <constraint firstAttribute="bottom" secondItem="rVp-s3-BER" secondAttribute="bottom" constant="52" id="8ae-he-JGh"/>
+                                                <constraint firstAttribute="trailing" secondItem="rVp-s3-BER" secondAttribute="trailing" id="B6j-4K-kzv"/>
+                                                <constraint firstItem="SwU-iw-3OA" firstAttribute="top" secondItem="rVp-s3-BER" secondAttribute="bottom" constant="2" id="S3U-BV-LAJ"/>
+                                                <constraint firstItem="rVp-s3-BER" firstAttribute="top" secondItem="8HE-L1-cG3" secondAttribute="top" id="c8C-nE-zQv"/>
+                                                <constraint firstItem="rVp-s3-BER" firstAttribute="leading" secondItem="8HE-L1-cG3" secondAttribute="leading" id="dcp-V7-U5e"/>
+                                                <constraint firstItem="ooC-Xq-Fix" firstAttribute="centerY" secondItem="SwU-iw-3OA" secondAttribute="centerY" id="l5v-cp-c2M"/>
+                                                <constraint firstAttribute="trailing" secondItem="SwU-iw-3OA" secondAttribute="trailing" constant="15" id="yqW-fM-yVt"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="foodImage" destination="rVp-s3-BER" id="DyW-Vz-3B0"/>
+                                            <outlet property="aName" destination="ooC-Xq-Fix" id="XvS-zg-QRx"/>
+                                            <outlet property="foodImage" destination="rVp-s3-BER" id="BMp-lQ-r1n"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -54,31 +77,46 @@
                     <navigationItem key="navigationItem" id="3CY-5z-rGG"/>
                     <connections>
                         <outlet property="tableView" destination="6wz-cE-b9Y" id="OiH-JN-fwa"/>
+                        <segue destination="4yQ-b6-PUV" kind="show" identifier="segue" id="JAZ-cL-cyV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="764" y="32"/>
+            <point key="canvasLocation" x="764" y="31.934032983508249"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="QJM-aK-7zm">
             <objects>
-                <viewController id="4yQ-b6-PUV" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detail" id="4yQ-b6-PUV" customClass="DetailViewController" customModule="SwiftDemo2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oLS-4T-nIa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fackimg" translatesAutoresizingMaskIntoConstraints="NO" id="g7B-Se-thC">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="g7B-Se-thC" firstAttribute="trailing" secondItem="YiU-1E-cNx" secondAttribute="trailing" id="Qvj-00-vni"/>
+                            <constraint firstItem="g7B-Se-thC" firstAttribute="bottom" secondItem="YiU-1E-cNx" secondAttribute="bottom" id="Rr2-t4-yPd"/>
+                            <constraint firstItem="g7B-Se-thC" firstAttribute="leading" secondItem="YiU-1E-cNx" secondAttribute="leading" id="XUX-et-pXG"/>
+                            <constraint firstItem="g7B-Se-thC" firstAttribute="top" secondItem="YiU-1E-cNx" secondAttribute="top" id="jdB-AZ-Q1O"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="YiU-1E-cNx"/>
                     </view>
+                    <connections>
+                        <outlet property="showDetail" destination="g7B-Se-thC" id="GuW-Yh-iaC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wB7-Dh-U75" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1484" y="32"/>
+            <point key="canvasLocation" x="1484" y="31.934032983508249"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Base Navigation Controller-->
         <scene sceneID="3ef-nu-BVy">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E9J-Wc-qaM" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E9J-Wc-qaM" customClass="BaseNavigationController" customModule="SwiftDemo2" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ivw-0P-yos">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -94,4 +132,8 @@
             <point key="canvasLocation" x="32.799999999999997" y="31.934032983508249"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="fackimg" width="1125" height="2004"/>
+        <image name="watchMore" width="45" height="49"/>
+    </resources>
 </document>
