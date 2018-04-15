@@ -70,8 +70,8 @@ extension ViewController: UITableViewDelegate {
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
 //        if segue.identifier == "segue" {
 //
 //            _ = segue.destination as! DetailViewController
@@ -79,4 +79,4 @@ extension ViewController: UITableViewDelegate {
 //        }
     }
     
-}
+
